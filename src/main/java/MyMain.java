@@ -25,7 +25,7 @@ public class MyMain {
             }
         }
         else if (direction.equals("right")){
-            for (int i = 0; i < boatlength; i++){
+            for (int i = 0; i < boatLength; i++){
                 board[row][col + i] = true;
             }
         }
@@ -37,11 +37,20 @@ public class MyMain {
     // increasing length
     // You may assume that all Strings are lowercase 
     public static boolean inOrder(String[][] words) { 
-        String single[] = String new[words.length * words[0].length];
-        for (int i = 0; i < words.length * words[0].length; i++){
-            if (single.charAt(0)) > 
+        for (int row = 0; row < words.length; row++){
+            for(int col = 0; col < words[0].length - 1; col++){
+                String str1 = words[row][col];
+                String str2 = words[row][col+1];
+                if (str1.compareTo(str2) > 0){
+                    return false;
+                }
+                if (str1.length() > str2.length()){
+                    return false;
+                }
+
+            }
         }
-        return false;
+        return true;
     }
 
     public static void main(String[] args) {
